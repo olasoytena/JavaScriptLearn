@@ -58,7 +58,7 @@ function sum(){
     if(ini == true){return}
     index += 1
     if(index > 1){
-        
+        // Do nothing
     }
     else{
         viewEl.textContent += " + "
@@ -70,7 +70,7 @@ function multi(){
     if(ini == true){return} 
     index += 1
     if(index > 1){
-        
+        // Do nothing
     }
     else{
         viewEl.textContent += " x "
@@ -82,7 +82,7 @@ function divide(){
     if(ini == true){return}
     index += 1
     if(index > 1){
-        
+        // Do nothing
     }
     else{
         viewEl.textContent += " / "
@@ -94,7 +94,7 @@ function minus(){
     if(ini == true){return}
     index += 1
     if(index > 1){
-        
+        // Do nothing
     }
     else{
         viewEl.textContent += " - "
@@ -103,7 +103,9 @@ function minus(){
 }
 
 function dot(){
+    // Check if decimal is present in number
     if(view[index].includes(".")){return}
+    // Add zero if decimal is first input
     if(ini == true){
         viewEl.textContent = "0"
         ini = false}
@@ -112,6 +114,7 @@ function dot(){
 }
 
 function equals(){
+    // Display operation
     switch(operation){
         case "+":
             viewEl.textContent = parseFloat(view[0]) + parseFloat(view[1])
@@ -126,6 +129,7 @@ function equals(){
             viewEl.textContent = parseFloat(view[0]) / parseFloat(view[1])
             break;
     }
+    // Reset variables
     view = ["0", "0"]
     operation = ""
     ini = true
