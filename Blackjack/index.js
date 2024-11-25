@@ -115,8 +115,12 @@ function stay(){
         else if(cardsDealer[1] == 11){cardsDealer[1]= 1}
         let newCard = randomCard()
         cardsDealer.push(newCard)
-        totalDealer += newCard 
+        totalDealer = 0
+        cardsDealer.forEach(element => {
+            totalDealer += element
+        })
     }
+    
     printCards(cardsDealer, dealerEl)
     console.log(totalDealer)
     if(totalDealer > 21){message.textContent = "Dealer busts! You Win!"}
